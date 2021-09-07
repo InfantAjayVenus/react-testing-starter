@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
@@ -56,6 +57,10 @@ class App extends Component {
 
   render() {
     return (
+      <HelmetProvider>
+      <Helmet>
+        <title>Todo App</title>
+      </Helmet>
       <Router>
         <div className="App">
           <div className="container">
@@ -78,6 +83,7 @@ class App extends Component {
           </div>
         </div>
       </Router>
+      </HelmetProvider>
     );
   }
 }
