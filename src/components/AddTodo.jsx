@@ -16,20 +16,21 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
+      <form onSubmit={this.onSubmit} style={{ display: 'flex', margin: "1rem auto", justifyContent: 'space-around' }}>
         <input 
           type="text" 
           name="title" 
-          style={{ flex: '10', padding: '5px' }}
+          style={{ flex: '8', padding: '1rem 0.5rem', borderRadius: '0.45rem' }}
           placeholder="Add Todo ..." 
           value={this.state.title}
           onChange={this.onChange}
         />
+        <span style={{display: 'inline-block', flex: '0.25'}} aria-hidden="true"></span>
         <input 
           type="submit" 
           value="Submit" 
           className="btn"
-          style={{flex: '1'}}
+          style={{flex: '1', borderRadius: '0.45rem'}}
         />
       </form>
     )

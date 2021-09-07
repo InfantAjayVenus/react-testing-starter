@@ -19,6 +19,7 @@ a {
 }
 
 .btn {
+  display: flex;
   display: inline-block;
   border: none;
   background: #555;

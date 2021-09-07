@@ -14,7 +14,8 @@ const headerStyle = {
   background: '#333',
   color: '#fff',
   textAlign: 'center',
-  padding: '10px'
+  padding: '10px',
+  flex: '2'
 }
 
 const linkStyle = {

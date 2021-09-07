@@ -6,13 +6,10 @@ export class TodoItem extends Component {
     return {
       background: "#f4f4f4",
       padding: "10px",
+      marginBottom: "0.5rem",
       borderBottom: "1px #ccc dotted",
       textDecoration: this.props.todo.completed ? "line-through" : "none",
     };
-  };
-
-  componentDidMount = (props) => {
-    console.log(this.props.todo);
   };
 
   render() {
@@ -27,7 +24,7 @@ export class TodoItem extends Component {
           />{" "}
           {title}
           <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>
-            x
+            &times;
           </button>
         </p>
       </div>
