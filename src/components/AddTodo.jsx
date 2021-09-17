@@ -31,6 +31,7 @@ class AddTodo extends Component {
           value="Submit" 
           className="btn"
           style={{flex: '1', borderRadius: '0.45rem'}}
+          disabled={this.state.title.length === 0}
         />
       </form>
     )
