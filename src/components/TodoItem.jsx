@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
+
+  validateTodo = () => {
+    return ['id', 'title', 'completed'].every((key) => this.props.todo.hasOwnProperty(key))
+  }
+
   getStyle = () => {
     return {
       background: "#f4f4f4",
@@ -14,8 +19,8 @@ export class TodoItem extends Component {
 
   render() {
     const { id, title, completed } = this.props.todo;
-    return (
-      <div style={this.getStyle()}>
+    return this.validateTodo() ? (
+      <div role="listitem" style={this.getStyle()}>
         <p>
           <input
             type="checkbox"
@@ -28,13 +33,13 @@ export class TodoItem extends Component {
           </button>
         </p>
       </div>
-    );
+    ): null;
   }
 }
 
 // PropTypes
 TodoItem.propTypes = {
-  todo: PropTypes.object.isRequired,
+  todo: PropTypes.shape({id: PropTypes.number.isRequired, title: PropTypes.string.isRequired, completed: PropTypes.bool.isRequired}),
   markComplete: PropTypes.func.isRequired,
   delTodo: PropTypes.func.isRequired,
 };
